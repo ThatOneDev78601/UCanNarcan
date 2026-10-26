@@ -1,0 +1,12 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {distanceMiles,rankLocations,safeWebsite,phoneHref,type Location} from '../src/lib/locations';
+import data from '../src/data/locations.json';
+const records=data.locations as Location[];
+test('all source pins have unique identities and valid numerical coordinates',()=>{assert.equal(records.length,222);assert.equal(new Set(records.map(l=>l.id)).size,222);assert(records.every(l=>Number.isFinite(l.lat)&&Number.isFinite(l.lng)));});
+test('distance is symmetric and handles the same point',()=>{const a={lat:39.29,lng:-76.61},b={lat:38.98,lng:-76.49};assert.equal(distanceMiles(a,a),0);assert(Math.abs(distanceMiles(a,b)-distanceMiles(b,a))<1e-9);assert(distanceMiles(a,b)>20&&distanceMiles(a,b)<25);});
+test('nearest results are ordered and suspect source pin is excluded',()=>{const r=rankLocations(records,{lat:39.29,lng:-76.61});assert(r.length>200);assert(r.every(l=>l.coordinateStatus!=='review'));for(let i=1;i<r.length;i++)assert(r[i].distance!>=r[i-1].distance!);});
+test('vending costs remain unknown and free filter excludes them',()=>{const machines=records.filter(l=>/vending/i.test(l.type));assert.equal(machines.length,40);assert(machines.every(l=>l.price===null&&l.priceStatus==='unknown'));assert(rankLocations(records,null,'free').every(l=>l.price===0||l.priceStatus==='program-free'));});
+test('empty coverage never pads results and unknown distance is not zero',()=>{assert.equal(rankLocations(records,null,'all','not-a-real-resource').length,0);assert(rankLocations(records,null).every(l=>l.distance===null));});
+test('unsafe external URLs and malformed phone links are rejected',()=>{assert.equal(safeWebsite('javascript:alert(1)'),null);assert.equal(phoneHref('unknown'),null);assert.equal(phoneHref('(301) 429-6100'),'tel:3014296100');});
+test('price preference stays local and deprioritizes unavailable stock',()=>{const base=records[0];const a={...base,id:'a',name:'Paid nearby',address:'a',lat:39,lng:-76,price:10,priceStatus:'paid'},b={...base,id:'b',name:'Free nearby',address:'b',lat:39.01,lng:-76,price:0},c={...base,id:'c',name:'Distant free',address:'c',lat:39.7,lng:-76,price:0};assert.equal(rankLocations([a,b,c],{lat:39,lng:-76},'all','','cost')[0].id,'b');assert.equal(rankLocations([a,{...b,stock:'out'}],{lat:39,lng:-76})[0].id,'a');});

@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.tmp/
+.impeccable/
+.openai/
+.git/
+.vercel/
+.env*
+*.tsbuildinfo
+*.md
+public/sw.js
+public/sw.js.map
+public/swe-worker-*.js*

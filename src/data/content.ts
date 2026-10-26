@@ -1,0 +1,21 @@
+export const medicalSources=[{name:'CDC overdose response',url:'https://www.cdc.gov/stop-overdose/response/index.html'},{name:'Narcan nasal spray instructions',url:'https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=724df050-5332-4d0a-9a5f-17bf08a547e1&type=display'},{name:'Maryland overdose education',url:'https://howtoadministernaloxone.maryland.gov/en/index.html'}];
+// Versioned recordings are immutable. Check replacements against the exact scripts
+// before preview integration; clinical review is required before public release.
+export const emergencyGuideVersion='2026-10-10-human-v1';
+const stepContent=[
+ {id:'recognize',title:'Check for signs. Get help.',text:'If someone cannot wake up, is breathing slowly or not at all, or makes gurgling sounds, treat it as an emergency. Give naloxone if available and call 911 immediately. Put the phone on speaker and follow the dispatcher.',short:'Recognize & call'},
+ {id:'administer',title:'Give one nasal spray.',text:'For Narcan 4 mg nasal spray: lay the person on their back and tilt their head back. Insert the nozzle into one nostril. Press the plunger firmly once. Do not test or prime the spray. Each device contains one dose.',short:'Give naloxone'},
+ {id:'breathing',title:'Support their breathing.',text:'Follow the 911 dispatcher’s instructions for rescue breathing or CPR if breathing is absent or abnormal. If they are breathing normally, place them on their side. Stay with them. Ask another person to bring more naloxone if needed.',short:'Support breathing'},
+ {id:'repeat',title:'Repeat if needed. Stay close.',text:'If there is no response after 2–3 minutes, or breathing slows again, give another dose with a new device in the other nostril. Continue as directed until emergency help arrives. Stay even if they wake up.',short:'Repeat & stay'},
+];
+
+export const emergencySteps=stepContent.map((step,index)=>({
+ ...step,guideVersion:emergencyGuideVersion,
+ audioUrl:`/audio/${emergencyGuideVersion}/${step.id}.mp3`,
+ narration:`Step ${index+1}. ${step.title} ${step.text}`,
+}));
+export const lessons=[
+ {id:'recognize',title:'Know the signs.',subtitle:'Spot an overdose. Know when to act.',minutes:3,color:'peach',body:'Someone who cannot be woken and has slow, irregular, or stopped breathing may be experiencing an opioid overdose. Gurgling or unusual snoring can be a warning sign. Skin, lips, or nails may look blue, gray, or ashen. If you are unsure, treat it as an emergency.',question:'A friend is unresponsive and making gurgling sounds. What should you do?',answers:['Let them sleep it off.','Give naloxone if available and call 911.','Wait until you are certain.'],correct:1,explanation:'Act immediately. Naloxone and emergency help can save a life. Stay with the person and follow the dispatcher’s instructions.'},
+ {id:'administer',title:'Small spray. Big difference.',subtitle:'Practice the steps for nasal Narcan.',minutes:4,color:'mint',body:'Narcan nasal spray is a single-use device. Insert its nozzle into one nostril and press the plunger once. Do not prime it. A new device is needed for each repeat dose. Read the instructions for the specific product you have.',question:'There is no response 2–3 minutes after the first spray. What comes next?',answers:['Reuse the same device.','Stop and wait for help.','Use a new device in the other nostril.'],correct:2,explanation:'Give another dose using a new device, while continuing emergency response and following the dispatcher. Naloxone can wear off, so emergency care is still needed.'},
+ {id:'prepare',title:'Look out for each other.',subtitle:'Make a plan before you need one.',minutes:3,color:'lilac',body:'Carry naloxone and tell people where you keep it. Learn how to use it together. Check its expiration date and storage instructions. Test strips can reduce uncertainty, but a negative result does not guarantee that a substance is safe. Local harm reduction programs can help you prepare.',question:'Which is a useful way to prepare?',answers:['Keep naloxone accessible and tell friends where it is.','Assume a negative test strip means no risk.','Hide naloxone where nobody can find it.'],correct:0,explanation:'Accessible supplies and a shared plan make it easier to respond. Ask a local program about training and harm reduction resources.'}
+];

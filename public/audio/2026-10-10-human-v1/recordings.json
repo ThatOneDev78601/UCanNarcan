@@ -1,0 +1,70 @@
+{
+  "guideVersion": "2026-10-10-human-v1",
+  "source": "User-supplied AI-generated WAV files",
+  "encoding": "FFmpeg libmp3lame, mono 64 kbps; original timing and delivery preserved",
+  "reviewMethod": "Local faster-whisper base.en CPU int8; no audio uploaded",
+  "clinicalReview": "pending",
+  "humanListeningReview": "pending",
+  "clips": [
+    {
+      "id": "recognize",
+      "url": "/audio/2026-10-10-human-v1/recognize.mp3",
+      "narration": "Step 1. Check for signs. Get help. If someone cannot wake up, is breathing slowly or not at all, or makes gurgling sounds, treat it as an emergency. Give naloxone if available and call 911 immediately. Put the phone on speaker and follow the dispatcher.",
+      "narrationSha256": "2ba9df2470a3e07a5bec26135d7d94cc8aea1af14a9631a4d0ccf6448515ecf3",
+      "sourceWavSha256": "a4f221b97600bf33c98b951e9b3b205f7aa0b7a51644c3199e00e0d3c5117c1f",
+      "mp3Sha256": "7f4e1878dc535964f514c475fc5a0e7b5881f47553923ee1ba3f482c71afffda",
+      "durationSeconds": 17.96,
+      "codec_name": "mp3",
+      "sample_rate": "24000",
+      "channels": 1,
+      "bit_rate": "64000",
+      "automatedTranscript": "Step 1. Check for signs. Get help. If someone cannot wake up, is breathing slowly or not at all, or makes gurgling sounds, treat it as an emergency. Give Naloxone if available and call 911 immediately. Put the phone on speaker and follow the dispatcher.",
+      "transcriptReview": "Matches script; equivalent spoken-number formatting and punctuation differences only"
+    },
+    {
+      "id": "administer",
+      "url": "/audio/2026-10-10-human-v1/administer.mp3",
+      "narration": "Step 2. Give one nasal spray. For Narcan 4 mg nasal spray: lay the person on their back and tilt their head back. Insert the nozzle into one nostril. Press the plunger firmly once. Do not test or prime the spray. Each device contains one dose.",
+      "narrationSha256": "42ee6d03e5c46e1322ecb5fda46ab39a0c2133b3db0695ada1a48884ef38f19b",
+      "sourceWavSha256": "f38bae4c3d10b80f70804b9c5d149ac5edd47a665920a30acdf713914d49f47c",
+      "mp3Sha256": "d97e8f4b04418929cc86e30dd7d0d3f5d0d722e45e9d44bb7cf21327437251d2",
+      "durationSeconds": 19.64,
+      "codec_name": "mp3",
+      "sample_rate": "24000",
+      "channels": 1,
+      "bit_rate": "64000",
+      "automatedTranscript": "Step two. Give one nasal spray. For Narcan four milligram nasal spray, lay the person on their back and tilt their head back. Insert the nozzle into one nostril. Press the plunger firmly once. Do not test or prime the spray. Each device contains one dose.",
+      "transcriptReview": "Matches script; equivalent spoken-number formatting and punctuation differences only"
+    },
+    {
+      "id": "breathing",
+      "url": "/audio/2026-10-10-human-v1/breathing.mp3",
+      "narration": "Step 3. Support their breathing. Follow the 911 dispatcher’s instructions for rescue breathing or CPR if breathing is absent or abnormal. If they are breathing normally, place them on their side. Stay with them. Ask another person to bring more naloxone if needed.",
+      "narrationSha256": "5e5b4fbd980ea6daf3a5c75944ba7be73072ec27668fb4fe177898d3564bcfcc",
+      "sourceWavSha256": "b137b7b75d98f043708bd96bf059720da67602c23e10b6e5cec3439df1aa93e4",
+      "mp3Sha256": "d2fdad71f7d33bf16a622c675dfc858f85873ec0ccb6548baeef36ad2d55c66f",
+      "durationSeconds": 18.12,
+      "codec_name": "mp3",
+      "sample_rate": "24000",
+      "channels": 1,
+      "bit_rate": "64000",
+      "automatedTranscript": "Step 3. Support their breathing. Follow the 911 dispatcher's instructions for rescue breathing or CPR if breathing is absent or abnormal. If they are breathing normally, place them on their side. Stay with them. Ask another person to bring more Naloxone if needed.",
+      "transcriptReview": "Matches script; equivalent spoken-number formatting and punctuation differences only"
+    },
+    {
+      "id": "repeat",
+      "url": "/audio/2026-10-10-human-v1/repeat.mp3",
+      "narration": "Step 4. Repeat if needed. Stay close. If there is no response after 2–3 minutes, or breathing slows again, give another dose with a new device in the other nostril. Continue as directed until emergency help arrives. Stay even if they wake up.",
+      "narrationSha256": "0d0f78850af5dc76e9718d987ba57a3f2fba6f198f577c0193b0a58dc418a2c4",
+      "sourceWavSha256": "b611965bc4d11151309e2a46c7eca09b80711fdac10a10666170827f264c3529",
+      "mp3Sha256": "64dfaacc59e4c97910fbe6e03b8b90d530335fb6a837ddfb5d69ed8084691513",
+      "durationSeconds": 18.32,
+      "codec_name": "mp3",
+      "sample_rate": "24000",
+      "channels": 1,
+      "bit_rate": "64000",
+      "automatedTranscript": "Step 4. Repeat if needed. Stay close. If there is no response after 2-3 minutes or breathing slows again, give another dose with a new device in the other nostril. Continue as directed until emergency help arrives. Stay even if they wake up.",
+      "transcriptReview": "Matches script; equivalent spoken-number formatting and punctuation differences only"
+    }
+  ]
+}

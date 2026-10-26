@@ -1,0 +1,19 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+*.tsbuildinfo
+public/sw.js
+public/sw.js.map
+public/swe-worker-*.js*
+.openai/*.tar.gz
+.tmp/
+.vercel/
+
+.vercel
+.env*
+
+# Local design reviews and hosting artifacts
+.impeccable/
+.openai/
